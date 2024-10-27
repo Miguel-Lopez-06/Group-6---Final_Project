@@ -1,20 +1,18 @@
-import streamlit as st  # For creating interactive web apps
-import matplotlib.pyplot as plt  # For plotting
-import numpy as np  # For numerical operations
-import pandas as pd  # For data manipulation
-from sklearn.model_selection import train_test_split  # For splitting data
-from sklearn.tree import DecisionTreeClassifier  # Decision Tree model
-from sklearn.metrics import accuracy_score  # To calculate accuracy
-import seaborn as sns  # For statistical data visualization
-import plotly.graph_objects as go  # For interactive visualizations with Plotly
-from io import StringIO  # For handling string data as file-like objects
-
-# Optional imports, if you need these specific functionalities
-import altair as alt  # For declarative statistical visualizations
-import squarify  # For creating tree maps
-from wordcloud import WordCloud  # For generating word clouds
-from mpl_toolkits.mplot3d import Axes3D  # For 3D plotting with Matplotlib
-import networkx as nx  # For network graph visualizations
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+import seaborn as sns
+import altair as alt
+import squarify
+from wordcloud import WordCloud
+from mpl_toolkits.mplot3d import Axes3D
+import networkx as nx
+import plotly.graph_objects as go
+from io import StringIO
 
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
