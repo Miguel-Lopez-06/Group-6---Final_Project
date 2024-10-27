@@ -11,6 +11,6 @@ import networkx as nx
 import plotly.graph_objects as go
 from io import StringIO
 
-st.title('Data Visualization Using Streamlit')
+st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Group 6 BM7`')
 st.header('------------------------------------------------------------')
