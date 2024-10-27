@@ -111,3 +111,4 @@ feature_importances.nlargest(10).plot(kind='barh')
 plt.title("Feature Importance for Decision Tree")
 st.pyplot(plt)
 plt.clf()
+
