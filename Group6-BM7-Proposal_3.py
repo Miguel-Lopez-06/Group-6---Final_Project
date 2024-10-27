@@ -14,3 +14,12 @@ from io import StringIO
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
 st.header('------------------------------------------------------------')
+
+df = pd.read_csv("diabetes.csv")
+
+df
+
+st.header('------------------------------------------------------------')
+df.info
+
+st.header('------------------------------------------------------------')
