@@ -92,7 +92,8 @@ sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['No Dia
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
 plt.title('Confusion Matrix for Logistic Regression')
-plt.show()
+st.pyplot(plt)
+plt.clf()
 
 # ROC Curve and AUC
 y_proba_log = log_reg.predict_proba(X_test)[:, 1]
@@ -106,8 +107,10 @@ plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('Receiver Operating Characteristic (ROC) Curve')
 plt.legend(loc='lower right')
-plt.show()
+st.pyplot(plt)
+plt.clf()
 
 
-
+st.pyplot(plt)
+plt.clf()
 
