@@ -12,7 +12,7 @@ import plotly.graph_objects as go
 from io import StringIO
 
 st.title('Data Visualization Using Streamlit')
-st.markdown('`Diabetes Dataset`')
+st.markdown('`Group 6 BM7`')
 st.header('------------------------------------------------------------')
 
 
