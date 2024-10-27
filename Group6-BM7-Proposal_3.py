@@ -22,6 +22,8 @@ df
 st.header('------------------------------------------------------------')
 st.header('Pie Chart of Outcome')
 
+df.head()
+
 df.info()
 
 df['Outcome'].unique()
@@ -42,5 +44,5 @@ def pie_chart_Outcome():
     plt.title('Pie Chart of Outcome')
     st.pyplot(plt)
     plt.clf()
-    
+
 pie_chart_Outcome()
