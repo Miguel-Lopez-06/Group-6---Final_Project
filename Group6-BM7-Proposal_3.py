@@ -64,7 +64,7 @@ import seaborn as sns
 
 # Load your dataset
 # Replace 'your_data.csv' with the path to your dataset
-df = pd.read_csv('your_data.csv')
+df = pd.read_csv("diabetes.csv")
 
 # Define features and target
 features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
