@@ -48,7 +48,7 @@ def pie_chart_Outcome():
 
 pie_chart_Outcome()
 
-st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
+st.write('The Pie Graph shows ')
 
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
