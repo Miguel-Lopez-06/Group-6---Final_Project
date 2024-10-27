@@ -17,16 +17,6 @@ st.header('------------------------------------------------------------')
 
 df = pd.read_csv("diabetes.csv")
 
-df
+print(df.head())
 
 st.header('------------------------------------------------------------')
-df.head
-
-st.header('------------------------------------------------------------')
-#Graph 1
-st.header('Bar Chart of Most Common CPU Types Used by Apple')
-df = pd.DataFrame(
-    np.random.randn(10, 5), columns=("col %d" % i for i in range(5))
-)
-
-st.table(df)
