@@ -56,56 +56,6 @@ st.write('This Bar Chart shows the types of CPU that Apple used in their laptops
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
 
-# Define features and target variable
-features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
-X = df[features]
-y = df['Outcome']
-
-# Display feature and target data
-st.write("Features (X):", X)
-st.write("Target (y):", y)
-
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Display shapes of train and test datasets
-st.write("X_train shape:", X_train.shape)
-st.write("X_train head:", X_train.head())
-st.write("X_test shape:", X_test.shape)
-st.write("X_test head:", X_test.head())
-st.write("y_train shape:", y_train.shape)
-st.write("y_train head:", y_train.head())
-st.write("y_test shape:", y_test.shape)
-st.write("y_test head:", y_test.head())
-
-# Initialize and train the Decision Tree Classifier
-dt_classifier = DecisionTreeClassifier(random_state=42)
-dt_classifier.fit(X_train, y_train)
-
-# Make predictions and calculate accuracy
-y_pred_tree = dt_classifier.predict(X_test)
-tree_accuracy = accuracy_score(y_test, y_pred_tree)
-
-# Display the accuracy
-st.write(f'Accuracy: {tree_accuracy * 100:.2f}%')
-
-# Calculate and display feature importance
-feature_importance = dt_classifier.feature_importances_
-
-importance_df = pd.DataFrame({
-    'Feature': X.columns,
-    'Importance': feature_importance
-}).sort_values(by='Importance', ascending=False).reset_index(drop=True)
-
-st.write("Feature Importances:", importance_df)
-
-# Plot the feature importance
-plt.figure(figsize=(10, 6))
-feature_importances = pd.Series(dt_classifier.feature_importances_, index=X.columns)
-feature_importances.nlargest(10).plot(kind='barh')
-plt.title("Feature Importance for Decision Tree")
-st.pyplot(plt)
-plt.clf()
 
 
 
