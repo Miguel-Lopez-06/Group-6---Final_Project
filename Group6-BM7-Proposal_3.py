@@ -48,3 +48,6 @@ def pie_chart_Outcome():
 pie_chart_Outcome()
 
 st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
+
+st.header('------------------------------------------------------------')
+st.header('Pie Chart of Outcome')
