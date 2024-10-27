@@ -1,7 +1,8 @@
 streamlit
 matplotlib
 numpy 
-pandas 
+pandas
+sklearn 
 seaborn 
 altair 
 squarify
