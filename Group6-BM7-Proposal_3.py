@@ -21,3 +21,12 @@ df
 
 st.header('------------------------------------------------------------')
 st.header('Pie Chart of Outcome')
+
+def pie_chart_Outcome():
+
+  plt.pie(Outcome_counts_list, labels=Outcome_list, autopct='%1.1f%%')
+  plt.title('Pie Chart of Outcome')
+st.pyplot(plt)
+# Clears the current figure
+plt.clf()
+pie_chart_Outcome()
