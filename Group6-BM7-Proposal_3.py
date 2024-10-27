@@ -1,3 +1,5 @@
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
 import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
@@ -52,3 +54,33 @@ st.write('This Bar Chart shows the types of CPU that Apple used in their laptops
 
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
+
+features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+X = df[features]
+y = df['Outcome']
+
+X
+
+y
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+X_train.shape
+
+X_train.head()
+
+X_test.shape
+
+X_test.head()
+
+y_train.shape
+
+y_train.head()
+
+y_test.shape
+
+y_train.head()
+
+dt_classifier = DecisionTreeClassifier(random_state=42)
+dt_classifier.fit(X_train, y_train)
+
