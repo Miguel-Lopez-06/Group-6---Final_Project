@@ -54,49 +54,65 @@ st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
 
 # Import necessary libraries
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, roc_curve, auc
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Define features and target (assuming the dataset is already loaded from the previous code)
+# Load your dataset
+# Replace 'your_data.csv' with the path to your dataset
+df = pd.read_csv('diabetes.csv')
+
+# Define features and target
+features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
 X = df[features]
 y = df['Outcome']
 
 # Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Initialize and train the Decision Tree model
-dt_classifier = DecisionTreeClassifier(random_state=42)
-dt_classifier.fit(X_train, y_train)
+# Initialize and train the logistic regression model
+log_reg = LogisticRegression(max_iter=1000, random_state=42)
+log_reg.fit(X_train, y_train)
 
 # Predict the outcomes on the test set
-y_pred_tree = dt_classifier.predict(X_test)
-tree_accuracy = accuracy_score(y_test, y_pred_tree)
+y_pred_log = log_reg.predict(X_test)
+log_accuracy = accuracy_score(y_test, y_pred_log)
 
 # Print accuracy
-print(f'Decision Tree Accuracy: {tree_accuracy * 100:.2f}%')
+print(f'Logistic Regression Accuracy: {log_accuracy * 100:.2f}%')
 
-# Confusion matrix for Decision Tree
-conf_matrix_tree = confusion_matrix(y_test, y_pred_tree)
+# Confusion matrix
+conf_matrix = confusion_matrix(y_test, y_pred_log)
 plt.figure(figsize=(8, 6))
-sns.heatmap(conf_matrix_tree, annot=True, fmt='d', cmap='Blues', xticklabels=['No Diabetes', 'Diabetes'], yticklabels=['No Diabetes', 'Diabetes'])
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=['No Diabetes', 'Diabetes'], yticklabels=['No Diabetes', 'Diabetes'])
 plt.xlabel('Predicted')
 plt.ylabel('Actual')
-plt.title('Confusion Matrix for Decision Tree')
-plt.show()
+plt.title('Confusion Matrix for Logistic Regression')
+st.pyplot(plt)
+plt.clf()
 
-# Feature importance plot
-feature_importance = dt_classifier.feature_importances_
-importance_df = pd.DataFrame({
-    'Feature': X.columns,
-    'Importance': feature_importance
-}).sort_values(by='Importance', ascending=False)
+# ROC Curve and AUC
+y_proba_log = log_reg.predict_proba(X_test)[:, 1]
+fpr, tpr, _ = roc_curve(y_test, y_proba_log)
+roc_auc = auc(fpr, tpr)
 
-plt.figure(figsize=(10, 6))
-sns.barplot(x='Importance', y='Feature', data=importance_df)
-plt.title("Feature Importance for Decision Tree")
-plt.show()
+plt.figure(figsize=(8, 6))
+plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.2f})')
+plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('Receiver Operating Characteristic (ROC) Curve')
+plt.legend(loc='lower right')
+st.pyplot(plt)
+plt.clf()
+
+
+
+
 
 
 
