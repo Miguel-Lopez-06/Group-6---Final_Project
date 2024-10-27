@@ -3,7 +3,6 @@ matplotlib
 numpy 
 pandas
 seaborn
-sklearn 
 altair 
 squarify
 wordcloud
