@@ -2,7 +2,8 @@ streamlit
 matplotlib
 numpy 
 pandas
-seaborn 
+seaborn
+sklearn 
 altair 
 squarify
 wordcloud
