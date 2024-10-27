@@ -22,6 +22,20 @@ df
 st.header('------------------------------------------------------------')
 st.header('Pie Chart of Outcome')
 
+df.info()
+
+df['Outcome'].unique()
+
+Outcome_counts = df['Outcome'].value_counts()
+print(Outcome_counts)
+
+Outcome_counts = df['Outcome'].value_counts()
+Outcome_counts_list = Outcome_counts.tolist()
+print(Outcome_counts_list)
+
+Outcome_list = df['Outcome'].unique().tolist()
+print(Outcome_list)
+
 def pie_chart_Outcome():
 
   plt.pie(Outcome_counts_list, labels=Outcome_list, autopct='%1.1f%%')
