@@ -2,8 +2,6 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
 import seaborn as sns
 import altair as alt
 import squarify
