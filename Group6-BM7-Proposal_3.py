@@ -56,6 +56,55 @@ st.write('This Bar Chart shows the types of CPU that Apple used in their laptops
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
 
+features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+X = df[features]
+y = df['Outcome']
+
+X
+
+y
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+X_train.shape
+
+X_train.head()
+
+X_test.shape
+
+X_test.head()
+
+y_train.shape
+
+y_train.head()
+
+y_test.shape
+
+y_train.head()
+
+dt_classifier = DecisionTreeClassifier(random_state=42)
+dt_classifier.fit(X_train, y_train)
+
+y_pred_tree = dt_classifier.predict(X_test)
+tree_accuracy = accuracy_score(y_test, y_pred_tree)
+
+print(f'Accuracy: {tree_accuracy * 100:.2f}%')
+
+feature_importance = dt_classifier.feature_importances_
+
+feature_importance
+
+importance_df = pd.DataFrame({
+    'Feature': X.columns,
+    'Importance': feature_importance
+})
+
+# Sort the DataFrame by importance for better readability
+importance_df = importance_df.sort_values(by='Importance', ascending=False).reset_index(drop=True)
+
+# Display the resulting DataFrame
+print(importance_df)
+
 plt.figure(figsize=(10, 6))
 feature_importances = pd.Series(dt_classifier.feature_importances_, index=X.columns)
 feature_importances.nlargest(10).plot(kind='barh')
