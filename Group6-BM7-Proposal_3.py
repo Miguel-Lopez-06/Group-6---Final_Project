@@ -20,3 +20,5 @@ df = pd.read_csv("diabetes.csv")
 df
 
 st.header('------------------------------------------------------------')
+df.info
+st.header('Bar Chart of Most Common CPU Types Used by Apple')
