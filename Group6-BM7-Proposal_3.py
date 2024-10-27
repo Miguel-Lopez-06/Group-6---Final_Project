@@ -71,9 +71,6 @@ features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin
 X = df[features]
 y = df['Outcome']
 
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
 # Initialize and train the logistic regression model
 log_reg = LogisticRegression(max_iter=1000, random_state=42)
 log_reg.fit(X_train, y_train)
