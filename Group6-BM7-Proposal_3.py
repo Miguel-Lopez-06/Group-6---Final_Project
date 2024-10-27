@@ -53,4 +53,9 @@ st.write('This Bar Chart shows the types of CPU that Apple used in their laptops
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
 
-
+plt.figure(figsize=(10, 6))
+feature_importances = pd.Series(dt_classifier.feature_importances_, index=X.columns)
+feature_importances.nlargest(10).plot(kind='barh')
+plt.title("Feature Importance for Decision Tree")
+st.pyplot(plt)
+plt.clf()
