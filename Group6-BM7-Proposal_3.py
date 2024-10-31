@@ -92,6 +92,7 @@ tree_accuracy = accuracy_score(y_test, y_pred_tree)
 
 print(f'Accuracy: {tree_accuracy * 100:.2f}%')
 
+st.subheader(' Feature Importance ')
 feature_importance = dt_classifier.feature_importances_
 
 feature_importance
