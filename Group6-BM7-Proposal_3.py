@@ -57,6 +57,12 @@ st.write('We can see from the pie chart that 65.1% denotes 1 the presence of dia
 st.header('------------------------------------------------------------')
 st.header('Decision Tree Classifier')
 
+features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+X = df[features]
+y = df['Outcome']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X_train.shape
 
 st.pyplot(plt)
 plt.clf()
