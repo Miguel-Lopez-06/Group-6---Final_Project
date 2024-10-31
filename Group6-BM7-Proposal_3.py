@@ -54,7 +54,7 @@ pie_chart_Outcome()
 st.write('We can see from the pie chart that 65.1% denotes 1 the presence of diabetes and 34.9% denotes 0 the absence of diabetes.')
 
 st.header('------------------------------------------------------------')
-st.header('Decision Tree Classifier')
+st.header('Model Training ( Decision Tree Classifier )')
 
 features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
 X = df[features]
