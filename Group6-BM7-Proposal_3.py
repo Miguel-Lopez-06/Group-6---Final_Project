@@ -67,12 +67,20 @@ st.subheader(' y = Outcome (Target) ')
 y
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+st.subheader(' X = Features ')
 X_train.shape
 X_train.head()
+
+st.subheader(' X = Features ')
 X_test.shape
 X_test.head()
+
+st.subheader(' X = Features ')
 y_train.shape
 y_train.head()
+
+st.subheader(' X = Features ')
 y_test.shape
 y_train.head()
 
