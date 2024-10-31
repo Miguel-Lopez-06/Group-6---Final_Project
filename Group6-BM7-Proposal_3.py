@@ -117,6 +117,17 @@ plt.clf()
 
 st.header('Insights')
 st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
-st.write('*   Laptops typically cost around €1134.97.')
-st.write('*   Range of prices: At least: €174, Maximum: €6099, '
-          '25% of the total: €609, and 75% of the total: €1496.50')
+st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
+st.write('*   Significance: High true negatives indicate that the model accurately identifies non-diabetic patients, reducing the likelihood of incorrectly alarming non-diabetic individuals.')
+
+st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
+st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
+st.write('*   Significance: High true negatives indicate that the model accurately identifies non-diabetic patients, reducing the likelihood of incorrectly alarming non-diabetic individuals.')
+
+st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
+st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
+st.write('*   Significance: High true negatives indicate that the model accurately identifies non-diabetic patients, reducing the likelihood of incorrectly alarming non-diabetic individuals.')
+
+st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
+st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
+st.write('*   Significance: High true negatives indicate that the model accurately identifies non-diabetic patients, reducing the likelihood of incorrectly alarming non-diabetic individuals.')
