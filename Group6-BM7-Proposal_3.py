@@ -79,8 +79,6 @@ print(f'Accuracy: {tree_accuracy * 100:.2f}%')
 st.subheader(' Feature Importance ')
 feature_importance = dt_classifier.feature_importances_
 
-feature_importance
-
 plt.figure(figsize=(10, 6))
 feature_importances = pd.Series(dt_classifier.feature_importances_, index=X.columns)
 feature_importances.nlargest(10).plot(kind='barh')
