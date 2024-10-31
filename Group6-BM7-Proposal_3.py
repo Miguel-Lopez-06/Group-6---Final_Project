@@ -1,3 +1,4 @@
+import streamlit as st
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -16,7 +17,6 @@ from io import StringIO
 
 import kagglehub
 import os
-import pandas as pd
 
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
