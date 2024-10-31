@@ -81,6 +81,10 @@ tree_accuracy = accuracy_score(y_test, y_pred_tree)
 
 print(f'Accuracy: {tree_accuracy * 100:.2f}%')
 
+feature_importance = dt_classifier.feature_importances_
+
+feature_importance
+
 
 st.pyplot(plt)
 plt.clf()
