@@ -10,9 +10,13 @@ from sklearn.preprocessing import LabelEncoder
 import seaborn as sns
 import altair as alt
 from mpl_toolkits.mplot3d import Axes3D
+import networkx as nx
+import plotly.graph_objects as go
+from io import StringIO
 
 import kagglehub
 import os
+import pandas as pd
 
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
