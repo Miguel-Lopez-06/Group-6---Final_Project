@@ -85,7 +85,10 @@ feature_importance = dt_classifier.feature_importances_
 
 feature_importance
 
-
+plt.figure(figsize=(10, 6))
+feature_importances = pd.Series(dt_classifier.feature_importances_, index=X.columns)
+feature_importances.nlargest(10).plot(kind='barh')
+plt.title("Feature Importance for Decision Tree")
 st.pyplot(plt)
 plt.clf()
 
