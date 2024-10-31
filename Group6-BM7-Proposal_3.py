@@ -100,3 +100,17 @@ plt.ylabel("Actual")
 plt.title("Confusion Matrix for Decision Tree")
 st.pyplot(plt)
 plt.clf()
+
+y_pred_proba_tree = dt_classifier.predict_proba(X_test)[:, 1]
+fpr, tpr, _ = roc_curve(y_test, y_pred_proba_tree)
+roc_auc_tree = auc(fpr, tpr)
+
+plt.figure(figsize=(10, 6))
+plt.plot(fpr, tpr, color='darkorange', label='AUC = %0.2f' % roc_auc_tree)
+plt.plot([0, 1], [0, 1], color='navy', linestyle='--')
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve for Decision Tree")
+plt.legend(loc="lower right")
+st.pyplot(plt)
+plt.clf()
