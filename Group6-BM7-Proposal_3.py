@@ -73,6 +73,9 @@ y_train.head()
 y_test.shape
 y_train.head()
 
+dt_classifier = DecisionTreeClassifier(random_state=42)
+dt_classifier.fit(X_train, y_train)
+
 
 st.pyplot(plt)
 plt.clf()
