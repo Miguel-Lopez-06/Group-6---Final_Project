@@ -17,13 +17,13 @@ from io import StringIO
 
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 
 df = pd.read_csv("diabetes.csv")
 
 df
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header('Pie Chart of Outcome')
 
 df.head()
@@ -53,7 +53,7 @@ pie_chart_Outcome()
 
 st.write('We can see from the pie chart that 65.1% denotes 1 the presence of diabetes and 34.9% denotes 0 the absence of diabetes.')
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header('Model Training ( Decision Tree Classifier )')
 
 features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
@@ -76,7 +76,7 @@ tree_accuracy = accuracy_score(y_test, y_pred_tree)
 
 print(f'Accuracy: {tree_accuracy * 100:.2f}%')
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header(' Feature Importance for Decision Tree ')
 feature_importance = dt_classifier.feature_importances_
 
@@ -87,7 +87,7 @@ plt.title("Feature Importance for Decision Tree")
 st.pyplot(plt)
 plt.clf()
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header('Confusion Matrix for Decision Tree')
 cm = confusion_matrix(y_test, y_pred_tree)
 plt.figure(figsize=(10, 6))
@@ -98,7 +98,7 @@ plt.title("Confusion Matrix for Decision Tree")
 st.pyplot(plt)
 plt.clf()
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header('ROC Curve for Decision Tree')
 y_pred_proba_tree = dt_classifier.predict_proba(X_test)[:, 1]
 fpr, tpr, _ = roc_curve(y_test, y_pred_proba_tree)
@@ -114,7 +114,7 @@ plt.legend(loc="lower right")
 st.pyplot(plt)
 plt.clf()
 
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
 st.header('Insights')
 st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
 st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
@@ -131,4 +131,4 @@ st.write('*   Significance: False negatives are concerning as they represent dia
 st.subheader('**True Positives (TP) (Bottom-right cell: 55)**')
 st.write('*   Interpretation: Out of the total cases where the actual condition was "Diabetes," the model correctly predicted "Diabetes" for 55 cases.')
 st.write('*   Significance: High true positives are essential for accurately identifying diabetic patients, ensuring those who need medical attention are correctly flagged.')
-st.header('-------------------------------------------------------------')
+st.header('------------------------------------------------------------')
