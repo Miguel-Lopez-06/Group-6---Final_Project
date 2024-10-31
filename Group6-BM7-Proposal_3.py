@@ -15,9 +15,6 @@ import networkx as nx
 import plotly.graph_objects as go
 from io import StringIO
 
-import kagglehub
-import os
-
 st.title('Group 6 BM7 - Proposal #3')
 st.markdown('`Diabetes Dataset`')
 st.header('------------------------------------------------------------')
