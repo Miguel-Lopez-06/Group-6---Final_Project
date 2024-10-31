@@ -114,7 +114,7 @@ plt.legend(loc="lower right")
 st.pyplot(plt)
 plt.clf()
 
-st.header('------------------------------------------------------------')
+st.header('-------------------------------------------------------------')
 st.header('Insights')
 st.subheader('**True Negatives (TN) (Top-left cell: 107)**')
 st.write('*   Interpretation: Out of the total cases where the actual condition was "No Diabetes," the model correctly predicted "No Diabetes" for 107 cases.')
