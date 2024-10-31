@@ -60,8 +60,10 @@ features = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin
 X = df[features]
 y = df['Outcome']
 
+st.subheader('** X = Features **')
 X
 
+st.subheader('** y = Outcome (Target) **')
 y
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
