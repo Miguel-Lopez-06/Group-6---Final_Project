@@ -22,7 +22,6 @@ st.header('------------------------------------------------------------')
 df = pd.read_csv("diabetes.csv")
 
 df
-st.write('This Bar Chart shows the types of CPU that Apple used in their laptops.')
 
 st.header('------------------------------------------------------------')
 st.header('Pie Chart of Outcome')
