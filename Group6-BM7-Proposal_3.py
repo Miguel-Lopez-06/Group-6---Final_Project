@@ -76,7 +76,7 @@ tree_accuracy = accuracy_score(y_test, y_pred_tree)
 
 print(f'Accuracy: {tree_accuracy * 100:.2f}%')
 
-st.subheader(' Feature Importance ')
+st.header(' Feature Importance for Decision Tree ')
 feature_importance = dt_classifier.feature_importances_
 
 plt.figure(figsize=(10, 6))
@@ -86,7 +86,7 @@ plt.title("Feature Importance for Decision Tree")
 st.pyplot(plt)
 plt.clf()
 
-st.header('Pie Chart of Outcome')
+st.header('Confusion Matrix for Decision Tree')
 cm = confusion_matrix(y_test, y_pred_tree)
 plt.figure(figsize=(10, 6))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=['No Diabetes', 'Diabetes'], yticklabels=['No Diabetes', 'Diabetes'])
@@ -96,7 +96,7 @@ plt.title("Confusion Matrix for Decision Tree")
 st.pyplot(plt)
 plt.clf()
 
-st.header('Pie Chart of Outcome')
+st.header('ROC Curve for Decision Tree')
 y_pred_proba_tree = dt_classifier.predict_proba(X_test)[:, 1]
 fpr, tpr, _ = roc_curve(y_test, y_pred_proba_tree)
 roc_auc_tree = auc(fpr, tpr)
