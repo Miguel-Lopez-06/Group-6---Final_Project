@@ -76,6 +76,11 @@ y_train.head()
 dt_classifier = DecisionTreeClassifier(random_state=42)
 dt_classifier.fit(X_train, y_train)
 
+y_pred_tree = dt_classifier.predict(X_test)
+tree_accuracy = accuracy_score(y_test, y_pred_tree)
+
+print(f'Accuracy: {tree_accuracy * 100:.2f}%')
+
 
 st.pyplot(plt)
 plt.clf()
