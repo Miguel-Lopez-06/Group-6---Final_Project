@@ -2,6 +2,12 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, roc_curve, auc
+from sklearn import tree
+from sklearn.preprocessing import LabelEncoder
 import seaborn as sns
 import altair as alt
 import squarify
