@@ -69,6 +69,11 @@ X_train.shape
 X_train.head()
 X_test.shape
 X_test.head()
+y_train.shape
+y_train.head()
+y_test.shape
+y_train.head()
+
 
 st.pyplot(plt)
 plt.clf()
