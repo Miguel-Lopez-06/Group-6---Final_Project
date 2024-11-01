@@ -15,7 +15,7 @@ import networkx as nx
 import plotly.graph_objects as go
 from io import StringIO
 
-st.title('Group 6 BM7 - Project 3')
+st.title('Group 6 BM7 - Project')
 st.markdown('`Diabetes Dataset`')
 st.header('------------------------------------------------------------')
 
